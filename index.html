@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Ticket Booking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <div>
+    <header class="lg:px-36">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn p-0 btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+              <li>
+                <label class="swap swap-rotate">
+                  <!-- this hidden checkbox controls the state -->
+                  <input
+                    type="checkbox"
+                    class="theme-controller"
+                    value="synthwave"
+                  />
+
+                  <!-- sun icon -->
+                  <svg
+                    class="swap-on fill-current w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                    />
+                  </svg>
+
+                  <!-- moon icon -->
+                  <svg
+                    class="swap-off fill-current w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                    />
+                  </svg>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <a class="btn p-0 btn-ghost text-2xl font-raleway lg:text-4xl font-extrabold"
+            >P-Ticket</a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+            <li>
+              <label class="swap swap-rotate">
+                <!-- this hidden checkbox controls the state -->
+                <input
+                  type="checkbox"
+                  class="theme-controller"
+                  value="synthwave"
+                />
+
+                <!-- sun icon -->
+                <svg
+                  class="swap-on fill-current w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                  />
+                </svg>
+
+                <!-- moon icon -->
+                <svg
+                  class="swap-off fill-current w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                  />
+                </svg>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end gap-6">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <a class="btn bg-[#1cd1001a] border-[#1cd1005b] text-[#1DD100]">Bus
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 17C4 17.5304 4.21071 18.0391 4.58579 18.4142C4.96086 18.7893 5.46957 19 6 19C6.53043 19 7.03914 18.7893 7.41421 18.4142C7.78929 18.0391 8 17.5304 8 17M4 17C4 16.4696 4.21071 15.9609 4.58579 15.5858C4.96086 15.2107 5.46957 15 6 15C6.53043 15 7.03914 15.2107 7.41421 15.5858C7.78929 15.9609 8 16.4696 8 17M4 17H2V6C2 5.73478 2.10536 5.48043 2.29289 5.29289C2.48043 5.10536 2.73478 5 3 5H17C18.3261 5 19.5979 5.7375 20.5355 7.05025C21.4732 8.36301 22 10.1435 22 12M8 17H16M16 17C16 17.5304 16.2107 18.0391 16.5858 18.4142C16.9609 18.7893 17.4696 19 18 19C18.5304 19 19.0391 18.7893 19.4142 18.4142C19.7893 18.0391 20 17.5304 20 17M16 17C16 16.4696 16.2107 15.9609 16.5858 15.5858C16.9609 15.2107 17.4696 15 18 15C18.5304 15 19.0391 15.2107 19.4142 15.5858C19.7893 15.9609 20 16.4696 20 17M20 17H22V12M22 12H17.5L16 5M2 10H17M7 5V10M12 5V10" stroke="#1DD100" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="hero w-auto rounded-2xl bg-no-repeat bg-center bg-[url(./images/banner.png)]";">
+        <!-- <div class="hero-overlay bg-opacity-60"></div> -->
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-2xl">
+            <h1 class="mb-5 text-6xl font-bold font-raleway ">End-to-End Travel with <br><span class="text-[#1DD100]">P Paribahane</span></h1>
+            <p class="mb-5 font-inter text-xl">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <button class="btn bg-[#1DD100] text-black border-0 ">Buy Tickets</button>
+          </div>
+        </div>
+        <!-- <div class="lg:h-[150px] lg:w-2/3 mx-auto rounded-xl text-white bg-[#131318] p-4 lg:-translate-y-px">
+            <h1 class="text-3xl font-extrabold pb-3">Meet all the heroes from the field</h1>
+            <p class="text-[#FFFFFF99]">Explore the prowess of hockey's finest on our website! Discover player profiles, stats, and inspiring stories. Meet the heroes from the field today.</p>
+        </div> -->
+      </div>
+    </header>
+    <main>
+        <!-- coupon section -->
+        <!-- <div  class="lg:px-36 text-center my-24">
+            <h1 class="font-raleway">Best offers for you</h1>
+            <div class="flex flex-col gap-6 lg:gap-24 lg:flex-row justify-between">
+                <div class="bg-[#FFBF0F] grid grid-cols-2 divide-white divide-dashed divide-x items-center px-11 px-10">
+                    <div>
+                        <h1 class="font-inter text-4xl font-bold">15% OFF</h1>
+                        <p class="font-inter text-xl font-medium">on your next purchase</p>
+                        <p class="font-inter text-[#03071266]">use by January 2024</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="absolute rounded-full w-5 h-5 bg-blue-900 mt-5 "></div>
+                        <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-5 "></div>
+                    </div>
+                    <div>
+                        <h1 class="font-inter text-4xl font-bold">NEW15</h1>
+                        <p class="font-inter text-[#03071266]">Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- ticket section -->
+        <div class="bg-[#E7E7E7]">
+            <div class=" py-24 sm:py-32">
+                <div class="px-36">
+                  <div class="mx-auto max-w-2xl sm:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">P.H Paribahang</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</p>
+                  </div>
+                  <div class="mx-auto mt-16 max-w-2xl rounded-3xl bg-white ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+                    <div class="p-8 sm:p-10 lg:flex-auto">
+                      <div>
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-2">
+                                <img class="w-12 h-9" src="./images/bus-logo.png" alt="">
+                                <Div>
+                                    <h3 class="text-3xl font-raleway font-bold tracking-tight text-gray-900">Greenline Paribahan</h3>
+                                    <p>Coach-009-WEB ! AC_Business</p>
+                                </Div>
+                            </div>
+                            <a class="btn text-xl bg-[#1cd1001a] border-[#1cd1005b] text-[#1DD100]">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3.83333 10.6427C4.45217 10.6427 5.04566 10.8885 5.48325 11.3261C5.92083 11.7637 6.16667 12.3572 6.16667 12.976V15.3093H17.8333V12.976C17.8333 12.3572 18.0792 11.7637 18.5168 11.3261C18.9543 10.8885 19.5478 10.6427 20.1667 10.6427M3.83333 10.6427C3.21449 10.6427 2.621 10.8885 2.18342 11.3261C1.74583 11.7637 1.5 12.3572 1.5 12.976V17.6427C1.5 18.2615 1.74583 18.855 2.18342 19.2926C2.621 19.7302 3.21449 19.976 3.83333 19.976H20.1667C20.7855 19.976 21.379 19.7302 21.8166 19.2926C22.2542 18.855 22.5 18.2615 22.5 17.6427V12.976C22.5 12.3572 22.2542 11.7637 21.8166 11.3261C21.379 10.8885 20.7855 10.6427 20.1667 10.6427M3.83333 10.6427V4.80933C3.83333 3.88107 4.20208 2.99083 4.85846 2.33445C5.51484 1.67808 6.40508 1.30933 7.33333 1.30933H16.6667C17.5949 1.30933 18.4852 1.67808 19.1415 2.33445C19.7979 2.99083 20.1667 3.88107 20.1667 4.80933V10.6427M5 19.976V22.3093M19 19.976V22.3093" stroke="#1DD100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                                40 Seats left
+                              </a>
+                        </div>
+                      </div>
+                      <p class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
+                      <div class="mt-10 flex flex-col items-center gap-8">
+                        <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
+                            <h1>Route</h1>
+                            <h1>Dhaka - Sylhet</h1>
+                        </div>
+                        <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
+                            <h1>Departure Time</h1>
+                            <h1>9:00 PM</h1>
+                        </div>
+                        <div class="flex w-full  items-center justify-between">
+                            <button class="btn">Boarding Point - Laxmipur</button>
+                            <button class="btn">Dropping Point - Bogura</button>
+                            <button class="btn">Est. Time - 11 Hour</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+                      <div class="rounded-2xl bg-gray-50 py-10 text-center items-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-28">
+                            <img class=" h-1/4" src="./images/fare.png" alt="">
+                            <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                            <span class="text-5xl font-bold tracking-tight text-gray-900">550</span>
+                            <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">Taka</span>
+                            </p>
+                            <p class="text-2xl font-medium font-inter">Per Seat</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="px-36 bg">
+                <div class=" bg-white flex flex-col gap-2 lg:flex-row justify-between px-7">
+                    <div>
+                        <h1 class="text-3xl font-inter font-medium">Select Your Seat</h1>
+                        <div class="flex w-full border-dashed border-y-2 border-black-600 items-center justify-between">
+                            <h1>Route</h1>
+                            <h1>Dhaka - Sylhet</h1>
+                        </div>
+                        <div class="grid gap-5 items-center pt-6">
+                                <!-- Column A -->
+                                <div class="grid grid-flow-col gap-10 justify-between">
+                                <div class="grid grid-cols-3 gap-4 items-center">
+                                <button id="A" class="px-0">A</button>
+                                <button id="A1" class="btn px-10">A1</button>
+                                <button id="A2" class="btn px-10">A2</button>
+                                </div>
+                                <div>
+                                <button id="A3" class="btn px-10">A3</button>
+                                <button id="A4" class="btn px-10">A4</button>
+                                </div>
+                                </div>
+                        </div> 
+                    </div>
+                    <div>
+                        <div class="mt-10 px-4 bg-[#F7F8F8] rounded-xl py-3 flex flex-col items-center gap-8">
+                            <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
+                                <h1 class="text-inter font-semibold">Seat <span>1</span></h1>
+                                <h1 class="text-inter font-semibold">Class</h1>
+                                <h1 class="text-inter font-semibold">Price</h1>
+                            </div>
+                            <div class="w-full space-y-4 border-b-2 border-black items-center">
+                                <div class="flex justify-between">
+                                    <h1>C2</h1>
+                                    <h1>Economy</h1>
+                                    <h1>550</h1>
+                                </div>
+                                <div class="flex justify-between">
+                                    <h1>C2</h1>
+                                    <h1>Economy</h1>
+                                    <h1>550</h1>
+                                </div>
+                            </div>
+                            <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
+                                <h1>Total Price</h1>
+                                <h1>BDT <span>1100</span></h1>
+                            </div>
+                          </div>
+                        <form action="#" method="POST" class=" text-left">
+                    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                      <div class="sm:col-span-2">
+                        <label for="email" class="block text-xl font-bold leading-6 ">Email</label>
+                        <div class="mt-2.5">
+                          <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF4240] sm:text-xl sm:leading-6">
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="phone-number" class="block text-xl font-bold leading-6 ">Phone number</label>
+                        <div class="relative mt-2.5">
+                          <div class="absolute inset-y-0 left-0 flex items-center">
+                            <label for="country" class="sr-only">Country</label>
+                            <select id="country" name="country" class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF4240] sm:text-xl">
+                              <option>BD</option>
+                              <option>CA</option>
+                              <option>EU</option>
+                              <option>US</option>
+                              <option>IN</option>
+                            </select>
+                            <!-- <i class="fa-solid fa-angle-down"></i> -->
+                          </div>
+                          <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-3 py-2 pl-20  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF4240] sm:text-xl sm:leading-6">
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="email" class="block text-xl font-bold leading-6 ">Email</label>
+                        <div class="mt-2.5">
+                          <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF4240] sm:text-xl sm:leading-6">
+                        </div>
+                      </div>
+                      <div class="flex gap-x-4 sm:col-span-2">
+                        <div class="flex h-6 items-center ">
+                          <input type="checkbox" class="toggle toggle-success" unchecked />
+                        </div>
+                        <label class="text-xl leading-6 " id="switch-1-label">
+                          By selecting this, you agree to our
+                          <a href="#" class="font-bold text-[#FF4240]">privacy&nbsp;policy</a>.
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mt-10">
+                      <button type="submit" class="block w-full rounded-md bg-[#FF4240] px-14 py-2.5 text-center text-xl font-bold text-white shadow-sm hover:bg-[#ff434081] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF4240]">Let's talk</button>
+                    </div>
+                        </form>
+                    </div>
+                  
+                </div>
+              </div>   
+        </div>
+    </main>
+    <div class="container">
+      <div class="section">
+        <h2>Destination</h2>
+        <select id="destinationSelect">
+          <option value="1">Destination 1</option>
+          <option value="2">Destination 2</option>
+          <option value="3">Destination 3</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <h2>Seat Selection</h2>
+        <div class="seats" id="seatsContainer"></div>
+      </div>
+
+      <div class="section">
+        <h2>Ticket Price Info</h2>
+        <div class="ticket-info" id="ticketInfo"></div>
+        <div id="totalPrice">Total Price: 0 tk</div>
+      </div>
+    </div>
+
+    <script src="./scripts/get tickets.js"></script>
+  </body> 
+</html>
