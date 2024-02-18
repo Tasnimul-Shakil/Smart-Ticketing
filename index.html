@@ -130,7 +130,7 @@
           </a>
         </div>
       </div>
-      <div class="hero w-auto rounded-2xl bg-no-repeat bg-center bg-[url(./images/banner.png)]">
+      <div class="hero w-auto h-[550px] rounded-2xl bg-no-repeat bg-center bg-[url(./images/banner.png)]">
         <!-- <div class="hero-overlay bg-opacity-60"></div> -->
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-2xl">
@@ -147,26 +147,36 @@
     </header>
     <main>
         <!-- coupon section -->
-        <!-- <div  class="lg:px-36 text-center my-24">
-            <h1 class="font-raleway">Best offers for you</h1>
-            <div class="flex flex-col gap-6 lg:gap-24 lg:flex-row justify-between">
-                <div class="bg-[#FFBF0F] grid grid-cols-2 divide-white divide-dashed divide-x items-center px-11 px-10">
+        <div  class="lg:px-36 text-center my-24">
+            <h1 class="font-raleway text-4xl font-bold pb-6 ">Best offers for you</h1>
+            <div class="flex flex-col gap-6 lg:gap-24 lg:flex-row justify-between py-11">
+                <div class="bg-[#FFBF0F] grid grid-cols-3 items-center justify-items-end px-11 rounded-3xl">
                     <div>
                         <h1 class="font-inter text-4xl font-bold">15% OFF</h1>
                         <p class="font-inter text-xl font-medium">on your next purchase</p>
                         <p class="font-inter text-[#03071266]">use by January 2024</p>
                     </div>
-                    <div class="flex flex-col">
-                        <div class="absolute rounded-full w-5 h-5 bg-blue-900 mt-5 "></div>
-                        <div class="absolute rounded-full w-5 h-5 bg-blue-900 -mt-5 "></div>
-                    </div>
+                    <img class="w-1/4" src="./images/info-devider.png" alt="">
                     <div>
                         <h1 class="font-inter text-4xl font-bold">NEW15</h1>
                         <p class="font-inter text-[#03071266]">Coupon Code</p>
                     </div>
                 </div>
+                <div class="bg-[#F78C9C] grid grid-cols-3 items-center justify-items-end px-11 rounded-3xl">
+                    <div>
+                        <h1 class="font-inter text-4xl font-bold">20% OFF</h1>
+                        <p class="font-inter text-xl font-medium">on your next purchase</p>
+                        <p class="font-inter text-[#03071266]">use by January 2024</p>
+                    </div>
+                    <img class="w-1/4" src="./images/info-devider.png" alt="">
+                    <div>
+                        <h1 class="font-inter text-4xl font-bold">Couple 20</h1>
+                        <p class="font-inter text-[#03071266]">Coupon Code</p>
+                    </div>
+                </div>
             </div>
-        </div> -->
+            <button class="btn border-2 border-[#1DD100] text-[#1DD100]">See All Offers</button>
+        </div>
         <!-- ticket section -->
         <div class="bg-[#E7E7E7] font-inter">
             <div class=" py-24 sm:py-32">
@@ -231,7 +241,7 @@
             <div class="px-36 font-inter">
                 <div class=" bg-white flex flex-col gap-8 lg:flex-row justify-between px-7">
                   <!-- bus seat UI -->
-                    <div class="py-6 px-10">
+                    <div class="py-6 px-10 w-3/5 ">
                         <h1 class="text-3xl font-inter font-medium">Select Your Seat</h1>
                         <div class="flex w-full border-dashed border-y-2 py-4 border-black-600 items-center justify-between">
                             <div class="flex gap-3 text-xl font-semibold">
@@ -315,8 +325,9 @@
                                 </div>
                         </div> 
                     </div>
-                    <div>
-                        <div class="mt-10 px-4 bg-[#F7F8F8] rounded-xl py-3 flex flex-col items-center gap-8">
+                    <!-- ticket price info -->
+                    <div class="w-2/5 flex flex-col justify-end">
+                        <div class="mt-10 px-4 bg-[#F7F8F8] rounded-xl py-3 flex flex-col items-end gap-8">
                             <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
                                 <h1 class="text-inter font-semibold">Seat <span id="selectedSeat" class="px-1 py-1 text-white rounded-full bg-[#1DD100]">0</span></h1>
                                 <h1 class="text-inter font-semibold">Class</h1>
@@ -331,9 +342,9 @@
                                 <h1 class="font-semibold text-black">Total Price</h1>
                                 <h1 class="font-semibold text-black">BDT <span id="total-price">00</span></h1>
                             </div>
-                            <div id="coupon-input" class="join">
-                              <input class="input input-bordered text-xs join-item" id="coupon" placeholder="Have any coupon?" onchange="checkFormCoupon()"> <!-- Input field is not disabled -->
-                              <button class="btn join-item rounded-r-xl text-white bg-gray-400" id="applyButton" disabled>Apply</button> <!-- Initially disabled and gray color -->
+                            <div id="coupon-input" class=" flex gap-0 w-full">
+                              <input class="input input-bordered text-xs w-full " id="coupon" placeholder="Have any coupon?" onchange="checkFormCoupon()"> <!-- Input field is not disabled -->
+                              <button class="btn  rounded-r-xl text-white bg-gray-400" id="applyButton" disabled>Apply</button> <!-- Initially disabled and gray color -->
                           </div>
                             <div class="flex w-full border-dashed border-b-2 border-black-60 items-center justify-between">
                                 <h1 class="font-semibold text-black">Grand Total</h1>

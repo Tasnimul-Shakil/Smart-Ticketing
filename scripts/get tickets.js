@@ -70,7 +70,6 @@
 //   document.getElementById(id).innerText = value;
 // }
 
-
 // bus seat information
 // const allBtn = document.getElementsByClassName("seat-button");
 // let count = 0;
@@ -119,10 +118,9 @@
 
 const allBtn = document.getElementsByClassName("seat-button");
 let count = 0;
-let totalPrice = 1100; // Starting total price
+let totalPrice = 0; // Starting total price
 let availableSeats = 40; // Initial number of available seats
-let selectedSeats = document.getElementsByClassName("selected"); // Global variable for selected seats
-
+let selectedSeats = document.getElementsByClassName("selected");
 // Get the available seats span element
 const availableSeatsElement = document.getElementById("available-seats");
 availableSeatsElement.textContent = availableSeats;
@@ -160,10 +158,10 @@ for (const btn of allBtn) {
 
       availableSeats--; // Decrement the number of available seats
       availableSeatsElement.textContent = availableSeats; // Update the available seats display
-      
+
       // Update selected seats
       selectedSeats = document.getElementsByClassName("selected");
-      
+
       // Check coupon validity after seat selection
       checkFormCoupon();
     } else if (isSelected) {
@@ -180,14 +178,16 @@ for (const btn of allBtn) {
 
       availableSeats++; // Increment the number of available seats
       availableSeatsElement.textContent = availableSeats; // Update the available seats display
-      
+
       // Update selected seats
       selectedSeats = document.getElementsByClassName("selected");
-      
+
       // Check coupon validity after seat deselection
       checkFormCoupon();
     } else {
-      alert("You can only select up to 4 seats or there are no available seats.");
+      alert(
+        "You can only select up to 4 seats or there are no available seats."
+      );
     }
 
     setInnerText("selectedSeat", count);
@@ -224,7 +224,75 @@ function checkFormCoupon() {
     applyButton.classList.add("bg-gray-400");
   }
 }
+function toggleCouponInputVisibility() {
+  const couponInput = document.getElementById("coupon-input");
+  // Enable apply button if at least four seats are selected
+  if (selectedSeats.length < 4) {
+    couponInput.classList.add('hidden');
+  } else {
+    couponInput.classList.remove('hidden');
+  }
+}
 
+// Function to apply discount and update grand total
+function applyDiscount(discountPercentage) {
+  const grandPriceElement = document.getElementById("grand-price");
+  const discountedPrice = totalPrice * (1 - discountPercentage / 100);
+  grandPriceElement.innerText = discountedPrice.toFixed(2);
 
+  // Hide the coupon input and apply button after applying the discount
+  const couponInputDiv = document.getElementById("coupon-input");
+  couponInputDiv.style.display = "none";
+}
+
+// Event listener for apply button click
+function applyDiscount(discountPercentage) {
+  const grandPriceElement = document.getElementById("grand-price");
+  const discountedPrice = totalPrice * (1 - discountPercentage / 100);
+  grandPriceElement.innerText = discountedPrice.toFixed(2);
+
+  // Hide the coupon input and apply button after applying the discount
+  const couponInputDiv = document.getElementById("coupon-input");
+  couponInputDiv.style.display = "none";
+}
+
+// Event listener for apply button click
+function applyDiscount(discountPercentage) {
+  const grandPriceElement = document.getElementById("grand-price");
+  const discountedPrice = totalPrice * (1 - discountPercentage / 100);
+  grandPriceElement.innerText = discountedPrice.toFixed(2);
+
+  // Hide the coupon input and apply button after applying the discount
+  const couponInputDiv = document.getElementById("coupon-input");
+  couponInputDiv.style.display = "none";
+}
+
+// Event listener for apply button click
+applyButton.addEventListener("click", function () {
+  const couponInput = document.getElementById("coupon").value.trim(); // Trim the input value
+
+  // Check if a valid coupon code is entered
+  if (couponInput === "NEW15") {
+    // If coupon code is "NEW15", apply 15% discount
+    applyDiscount(15);
+
+    // Remove the disabled attribute from the apply button
+    applyButton.removeAttribute("disabled");
+  } else if (couponInput === "Couple 20") {
+    // If coupon code is "Couple 20", apply 20% discount
+    applyDiscount(20);
+
+    // Remove the disabled attribute from the apply button
+    applyButton.removeAttribute("disabled");
+  } else {
+    // No valid coupon entered, disable the apply button
+    applyButton.setAttribute("disabled", true);
+  }
+
+  // Disable the apply button after applying the discount
+  applyButton.disabled = true;
+  applyButton.classList.remove("bg-[#1DD100]");
+  applyButton.classList.add("bg-gray-400");
+});
 
 
