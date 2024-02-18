@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Ticket Booking</title>
+<link
+href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+rel="stylesheet"
+type="text/css"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css" />
+<!-- <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .section {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .seats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .seat {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  .seat.available {
+    background-color: #fff;
+  }
+  .seat.unavailable {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  .ticket-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+</style> -->
+</head>
+<body>
+
+
+  
+  <div class="section ">
+    <h2>Seat Selection</h2>
+    <div class="seats grid grid-cols-4 gap-5" id="seatsContainer"> </div>
+  </div>
+  
+  <div class="section">
+    <h2>Ticket Price Info</h2>
+    <div class="ticket-info" id="ticketInfo"></div>
+    <div id="totalPrice">Total Price: 0 tk</div>
+  </div>
+</div>
+
+<script>
+  const destinationSelect = document.getElementById('destinationSelect');
+  const seatsContainer = document.getElementById('seatsContainer');
+  const ticketInfo = document.getElementById('ticketInfo');
+  const totalPriceDisplay = document.getElementById('totalPrice');
+  let totalPrice = 0;
+  
+  // Generate seats
+  const generateSeats = () => {
+    seatsContainer.innerHTML = '';
+    for (let row = 1; row <= 10; row++) {
+      for (let seat = 1; seat <= 4; seat++) {
+        const div = document.createElement('div');
+        div.className = 'seat available';
+        div.dataset.row = row;
+        div.dataset.seat = seat;
+        div.textContent = String.fromCharCode(65 + seat - 1) + row;
+        seatsContainer.appendChild(div);
+      }
+    }
+  };
+  
+  generateSeats();
+  
+  // Seat click event
+  seatsContainer.addEventListener('click', (e) => {
+    const selectedSeat = e.target;
+    if (selectedSeat.classList.contains('available')) {
+      selectedSeat.classList.remove('available');
+      selectedSeat.classList.add('unavailable');
+      const ticket = document.createElement('div');
+      ticket.textContent = selectedSeat.textContent + ' - 550tk';
+      ticketInfo.appendChild(ticket);
+      totalPrice += 550;
+      totalPriceDisplay.textContent = `Total Price: ${totalPrice} tk`;
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<div id="coupon-input" class="join">
+    <input class="input input-bordered text-xs join-item" placeholder="Have any coupon?"/>
+    <button class="btn join-item rounded-r-xl text-white bg-[#1DD100]">apply</button>
+  </div>

@@ -1,17 +1,29 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
-
-/* poppins  */
-.poppins{
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap")
+  /* poppins  */ .poppins {
+  font-family: "Poppins", sans-serif;
 }
 
 /* Anton  */
 
-.font-raleway{
-    font-family: 'raleway', sans-serif;
+.font-raleway {
+  font-family: "raleway", sans-serif;
 }
 
-.font-inter{
-    font-family: 'inter', sans-serif;
+.font-inter {
+  font-family: "inter", sans-serif;
 }
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Style for the selected button */
+/* Style for disabled button */
+#submitButton:disabled {
+    background-color: #CCCCCC; /* Gray color */
+    color: #666666; /* Text color */
+  }
+/* #coupon-input:disabled {
+    background-color: #CCCCCC;
+    color: #666666;
+  } */
