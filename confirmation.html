@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="fixed inset-0 bg-[#F2F1F1] bg-opacity-75 transition-opacity"></div>
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+          <div
+            class="flex flex-col justify-center relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all py-7">
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="flex flex-col items-center">
+                <img src="./images/success.png" alt="" />
+                <div class="mt-3 text-center">
+                  <h3
+                    class="text-3xl font-raleway font-bold text-[#27AE60]"
+                    id="modal-title">
+                    SUCCESS
+                  </h3>
+                  <div class="mt-2 py-4">
+                    <p class="text-xl font-inter font-medium">
+                      Thank you for Booking Our Bus Seats. <br> We are working hard
+                      to find the best service and deals for you.
+                    </p>
+                    <p class="text-[1rem] font-light font-inter pt-3">
+                      Shortly you will find a confirmation in your email.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+                <a class="btn bg-[#27AE60] w-3/5 rounded-full text-white" href="./index.html">Continue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

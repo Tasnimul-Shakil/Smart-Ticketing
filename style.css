@@ -17,13 +17,9 @@ li {
   align-items: center;
   justify-content: space-between;
 }
-/* Style for the selected button */
-/* Style for disabled button */
+
 #submitButton:disabled {
-    background-color: #CCCCCC; /* Gray color */
-    color: #666666; /* Text color */
+    background-color: #CCCCCC; /
+    color: #666666; 
   }
-/* #coupon-input:disabled {
-    background-color: #CCCCCC;
-    color: #666666;
-  } */
+
