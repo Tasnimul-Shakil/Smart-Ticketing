@@ -1,15 +1,15 @@
-// function Success(){
-//   homeSection= getElementById("main-page");
-//   homeSection.classList.add("hidden");
-  
-//   successSection= getElementById("success-page");
-//   successSection.classList.remove("hidden");
-// }
+const scrollToBuyTicketButton = document.getElementById("scrollToBuyTicketButton");
+
+scrollToBuyTicketButton.addEventListener("click", function() {
+    const buyTicketSection = document.getElementById("buy-ticket");
+
+    buyTicketSection.scrollIntoView({ behavior: 'smooth' });
+});
 
 const allBtn = document.getElementsByClassName("seat-button");
 let count = 0;
-let totalPrice = 0; // Starting total price
-let availableSeats = 40; // Initial number of available seats
+let totalPrice = 0; 
+let availableSeats = 39; 
 let selectedSeats = document.getElementsByClassName("selected");
 // Get the available seats span element
 const availableSeatsElement = document.getElementById("available-seats");
